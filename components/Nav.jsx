@@ -25,9 +25,11 @@ const Nav = () => {
             <Image src="/assets/images/Logo.svg" alt="Promtopia Logo" width={30} height={30} className="object-contain"></Image>
             <p className="logo_text">Promtopia</p>
             </Link>
+
+            
         {/* Desktop Navigation */ }
             <div className="sm:flex hidden">
-                {isUserLoggedIn? (
+                {session?.user ? (
                 <div className ="flex gap-3 md:gap-5">
                     <Link href="/create-prompt" className="black_btn">Create Post</Link>
 
@@ -48,7 +50,7 @@ const Nav = () => {
 
      {/* Mobile Navigation */}
       <div className='sm:hidden flex relative'>
-        {isUserLoggedIn? (
+        {session?.user ? (
           <div className='flex'>
             <Image
               src="/assets/images/logo.svg"
